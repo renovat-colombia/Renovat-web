@@ -23,7 +23,7 @@ export default function Footer() {
           aria-label="RenovaT Colombia, volver al inicio"
           className="justify-self-center lg:justify-self-start"
         >
-          <Logo />
+          <Logo className="h-16 lg:h-20" />
         </a>
 
         <div className="text-sm text-white/70">

@@ -19,13 +19,13 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative isolate overflow-hidden bg-carbon pt-16 lg:pt-20"
+      className="relative isolate overflow-hidden bg-carbon pt-18 lg:pt-24"
     >
       <Image
         src="/images/hero-bg.jpg"
         alt=""
         fill
-        preload
+        priority
         sizes="100vw"
         className="-z-20 object-cover object-[70%_center]"
       />
@@ -34,15 +34,14 @@ export default function Hero() {
         className="absolute inset-0 -z-10 bg-carbon/75 md:bg-transparent md:bg-linear-to-r md:from-carbon md:via-carbon/80 md:to-carbon/5"
       />
 
-      <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 lg:min-h-0 lg:px-8 lg:pt-24 lg:pb-16">
+      <div className="mx-auto flex min-h-[calc(100svh-4.5rem)] max-w-7xl flex-col justify-center px-4 py-14 sm:px-6 lg:min-h-0 lg:px-8 lg:pt-24 lg:pb-16">
         <h1 className="max-w-[12em] text-[2.5rem] font-extrabold leading-[1.04] tracking-tight text-white motion-safe:animate-subir sm:text-5xl lg:text-6xl">
           Transformamos espacios, renovamos
           <span className="block text-oro">tu vida.</span>
         </h1>
 
         <p className="mt-6 max-w-md text-lg leading-relaxed text-white/80 motion-safe:animate-subir motion-safe:[animation-delay:120ms]">
-          Expertos en reparaciones locativas, con acabados de lujo y máxima
-          calidad. Donde cada reparación refleja un hogar.
+          Donde cada reparación refleja un hogar.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 motion-safe:animate-subir motion-safe:[animation-delay:240ms] sm:flex-row">
@@ -55,7 +54,6 @@ export default function Hero() {
             <IconoWhatsApp className="size-5" />
             Cotiza por WhatsApp
           </a>
-          
           <a
             href="#proyectos"
             className="inline-flex items-center justify-center rounded-md border border-white/60 px-6 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:border-oro hover:text-oro"

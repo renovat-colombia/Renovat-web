@@ -16,15 +16,10 @@ export default function Navbar() {
     const observador = new IntersectionObserver(
       (entradas) => {
         for (const entrada of entradas) {
-          if (entrada.isIntersecting) {
-            visibles.add(entrada.target.id);
-          } else {
-            visibles.delete(entrada.target.id);
-          }
+          if (entrada.isIntersecting) visibles.add(entrada.target.id);
+          else visibles.delete(entrada.target.id);
         }
-
         if (Date.now() < pausaHasta.current) return;
-
         const seccion = NAV_LINKS.find((link) => visibles.has(link.id));
         if (seccion) setActivo(seccion.id);
       },
@@ -60,20 +55,20 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-carbon/95 backdrop-blur-md">
       <nav
         aria-label="Navegación principal"
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:h-20 lg:px-8"
+        className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-24 lg:gap-6 lg:px-8"
       >
         <a
           href="#inicio"
           onClick={() => irA("inicio")}
           aria-label="RenovaT Colombia, ir al inicio"
+          className="shrink-0"
         >
           <Logo />
         </a>
 
-        <ul className="hidden items-center gap-9 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex xl:gap-9">
           {NAV_LINKS.map(({ id, label }) => {
             const esActivo = activo === id;
-
             return (
               <li key={id}>
                 <a
@@ -85,7 +80,6 @@ export default function Navbar() {
                   }`}
                 >
                   {label}
-
                   <span
                     aria-hidden="true"
                     className={`absolute inset-x-0 -bottom-0.5 h-0.5 origin-left rounded-full bg-oro transition-transform duration-300 ${
@@ -98,7 +92,7 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={WHATSAPP_URL}
             target="_blank"
